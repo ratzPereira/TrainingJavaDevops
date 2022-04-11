@@ -3,10 +3,7 @@ package com.ratz.couponservice.controller;
 import com.ratz.couponservice.model.Coupon;
 import com.ratz.couponservice.repository.CouponRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/coupon")
@@ -16,14 +13,13 @@ public class CouponController {
   CouponRepository couponRepository;
 
   @PostMapping
-  public Coupon createCoupon(Coupon coupon){
+  public Coupon createCoupon(@RequestBody Coupon coupon){
 
-    couponRepository.save(coupon);
-    return coupon;
+    return couponRepository.save(coupon);
   }
 
-  @GetMapping
-  public Coupon getCoupon(String code){
+  @GetMapping("/{code}")
+  public Coupon getCoupon(@PathVariable String code){
 
     return couponRepository.findByCode(code);
   }
