@@ -14,7 +14,7 @@ public class Coupon {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String code;
-  private String expirationDate;
+  private String expDate;
   private BigDecimal discount;
 
 
@@ -38,11 +38,11 @@ public class Coupon {
   }
 
   public String getExpirationDate() {
-    return expirationDate;
+    return expDate;
   }
 
   public void setExpirationDate(String expirationDate) {
-    this.expirationDate = expirationDate;
+    this.expDate = expirationDate;
   }
 
   public BigDecimal getDiscount() {

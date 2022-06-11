@@ -1,10 +1,10 @@
-package com.ratz.couponservice;
+package com.ratz.productservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CouponServiceApplicationTests {
+class ProductserviceApplicationTests {
 
 	@Test
 	void contextLoads() {
